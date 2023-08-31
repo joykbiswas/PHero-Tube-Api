@@ -1,16 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PHero-tube</title>
-</head>
-<body>
-    <nav>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        *{
+            font-family: 'Inter', sans-serif;
+        }
+        .active{
+          background-color: rgb(191, 224, 58);
+        }
+    </style>
+  </head>
+  <body>
+    <nav id="nav-container" class="w-11/12 mx-auto  ">
+      <!-- <div class="navbar bg-base-100 justify-between  flex-col md:flex-row ">
+        <div  div class="">
+            <h3 class="text-3xl"><img src="./logo/Logo.png" alt=""></h3>
+        </div>
+        <div class="">
+          <a class="btn bg-slate-400 px-4 normal-case text-2xl">Sort by view</a>
+        </div>
+        <div class="">
+          <button class="btn bg-red-400 ">Blog</button>
+        </div>
+      </div> -->
     </nav>
+
+    <div id="line" class="m-6">
+    </div>
+
     <main>
-        
+      <section id="button-container" class="justify-center gap-x-7  flex flex-row ">
+      
+      </section>
+      
+
+      <section class="w-11/12 mx-auto" >
+        <div id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+           <!-- <div class="card w-96 bg-base-100 shadow-xl">
+            <figure>
+              <img
+                src="https://i.ibb.co/M23fhxm/unsplash-Eh-Tc-C9s-YXsw.png"
+                alt="Shoes"
+              />
+            </figure>
+            <div class="card-body">
+              
+              <div class="card-footer flex justify-between mt-8">
+                <div class="flex">
+                  <div>
+                    <div class="avatar online">
+                      <div class="w-14 rounded-full">
+                        <img
+                          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h6>Jimmy Dane</h6>
+                    <small>2022-08-24 17:27:34</small>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>  -->
+        </div>
+      </section>
+
     </main>
-</body>
+    <script src="./tube.js"></script>
+  </body>
 </html>
