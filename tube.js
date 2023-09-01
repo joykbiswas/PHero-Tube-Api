@@ -7,10 +7,10 @@ const navbar = () => {
       <h3 class="text-3xl"><img src="./logo/Logo.png" alt=""></h3>
     </div>
     <div class="">
-      <a class="btn bg-slate-400 px-4 normal-case text-2xl">Sort by view</a>
+      <a onclick="" id='short-views' class="btn bg-slate-400 px-4 normal-case text-2xl">Sort by view</a>
     </div>
     <div class="">
-     <button class="btn bg-red-400 ">Blog</button>
+     <button onclick="my_modal_3()" class="btn bg-red-400 ">Blog</button>
     </div>
     
     `;
@@ -29,7 +29,7 @@ const handleButton = async()=>{
     const res = await fetch("https://openapi.programming-hero.com/api/videos/categories");
     const data = await res.json()
     const AllButton = data.data
-    console.log(AllButton);
+    // console.log(AllButton);
 
 
     const buttonContainer= document.getElementById('button-container')
@@ -53,42 +53,75 @@ const handleLoadData = async (id) =>{
         console.log(data);
     const div = document.createElement('div')
     div.innerHTML=`
-    <div class="card bg-base-300 shadow-xl">
-    <figure>
-      <img class="w-40"
-        src="${data.thumbnail}"
-        alt="img"
-      />
-    </figure>
-    <div class="card-body">
-      
-      <div class="card-footer flex justify-between mt-8">
-        <div class="flex gap-2">
-          <div>
-            <div class="avatar online">
-              <div class="w-14 rounded-full">
-                <img
-                  src="${data.authors[0].profile_picture}"
-                />
-              </div>
-            </div>
-          </div>
-          <div>
-            <h6> ${data.authors[0].profile_name} <span>${data.authors[0].verified}</span></h6>
-            <h5> ${data.others.views} views</h5>
-          </div>
-        </div>
+    <div class="card  bg-base-100 shadow-xl">
+    <figure><img class="h-48" src="${data.thumbnail}" alt="img" /></figure>
+    <div class="card-body flex flex-row">
+      <div class="avatar ">
+         <div class="w-14 h-14 rounded-full">
+          <img class="" src="${data.authors[0].profile_picture}">
+         </div>
       </div>
+      <div>
+      <h2 class="card-title"> ${data.authors[0].profile_name}   <span><img src="./logo/fi_10629607.svg" ${data.authors[0].verified ? "" : "hidden"}></span>
+      </h2>
+      <p>${data.others.views} views</p>
+        </div>
+    
+      </div>
+      
     </div>
-   </div>
+  </div>
     `;
     cardContainer.appendChild(div)
     })
+
+
 }
 
+const my_modal_3=() =>{
+  const accordionContainer = document.getElementById('accordion-container')
+  accordionContainer.innerHTML= ''
+  const div =document.createElement('div')
+  div.innerHTML=`
+  <dialog id="my_modal_3" class="modal">
+  <form method="dialog" class="modal-box  w-11/12 max-w-5xl">
+    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button><br>
 
-
-
+    <div class="collapse collapse-arrow bg-base-200">
+      <input type="radio" name="my-accordion-2" checked="checked" /> 
+      <div class="collapse-title text-xl font-medium">
+      Discuss the scope of var, let, and const 
+      </div>
+      <div class="collapse-content"> 
+        <p>hello1</p>
+      </div>
+    </div>
+    <div class="collapse collapse-arrow bg-base-200">
+      <input type="radio" name="my-accordion-2" /> 
+      <div class="collapse-title text-xl font-medium">
+      Tell us the use cases of null and undefined 
+      </div>
+      <div class="collapse-content"> 
+        <p>hello2</p>
+      </div>
+    </div>
+    <div class="collapse collapse-arrow bg-base-200">
+      <input type="radio" name="my-accordion-2" /> 
+      <div class="collapse-title text-xl font-medium">
+      What do you mean by REST API?
+      </div>
+      <div class="collapse-content"> 
+        <p>hello3</p>
+      </div>
+    </div>
+  </form>
+</dialog>
+  `
+  
+  accordionContainer.appendChild(div);
+  const modal = document.getElementById('my_modal_3')
+  modal.showModal()
+}
 
 
 
